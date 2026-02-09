@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таксы: Очарование в миниатюре</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fef9f3;
+            color: #5a3921;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ffd8b1 0%, #ffb347 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 i {
+            color: #ff6b35;
+            margin: 0 10px;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #a0522d;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            border: 8px solid white;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #d2691e;
+            border-bottom: 3px solid #ffb347;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 15px;
+            color: #ff8c42;
+        }
+
+        h3 {
+            color: #8b4513;
+            margin: 20px 0 15px;
+            font-size: 1.6rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background-color: #fff9f0;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #ff8c42;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card h4 {
+            color: #d2691e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-card h4 i {
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #ff8c42;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff9f0;
+        }
+
+        tr:hover {
+            background-color: #ffeddb;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .caption {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        .quote {
+            background-color: #fff0e0;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff8c42;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #8b4513;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 10px;
+            color: #d2691e;
+            font-weight: 600;
+        }
+
+        .warning {
+            background-color: #ffeaea;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #ff5252;
+            margin: 25px 0;
+        }
+
+        .warning-title {
+            color: #ff5252;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-title i {
+            margin-right: 10px;
+        }
+
+        .facts-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .facts-list li {
+            padding: 12px 0 12px 45px;
+            position: relative;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .facts-list li:before {
+            content: "🐾";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 1.2rem;
+        }
+
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .trait {
+            background-color: #fff0e0;
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .trait i {
+            margin-right: 8px;
+            color: #ff8c42;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            background-color: #8b4513;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-paw"></i> Таксы: Очарование в миниатюре <i class="fas fa-paw"></i></h1>
+            <p class="tagline">Маленькое тело, большое сердце и бесконечная преданность</p>
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Такса в поле" class="hero-image">
+            <p><em>Фото: Unsplash</em></p>
+        </header>
+
+        <section class="section">
+            <h2><i class="fas fa-star"></i> Особенности породы</h2>
+
+            <h3>📏 Внешность</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4><i class="fas fa-body"></i> Тело</h4>
+                    <p>Удлинённое, мускулистое, идеально для норной охоты</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-shoe-prints"></i> Лапы</h4>
+                    <p>Короткие, но сильные, с цепкими когтями</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-eye"></i> Глаза</h4>
+                    <p>Выразительные, умные, тёмно-карие, с внимательным взглядом</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-assistive-listening-systems"></i> Уши</h4>
+                    <p>Висячие, мягкие, закруглённые на концах</p>
+                </div>
+            </div>
+
+            <h3>🎨 Разновидности</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Тип шерсти</th>
+                        <th>Описание</th>
+                        <th>Особенности</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Гладкошёрстная</strong></td>
+                        <td>Короткая, блестящая, плотно прилегающая шерсть</td>
+                        <td>Классический вид, минимальный уход</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Длинношёрстная</strong></td>
+                        <td>Шелковистая, волнистая, мягкая шерсть</td>
+                        <td>Элегантный шлейф на хвосте, требует регулярного ухода</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Жесткошёрстная</strong></td>
+                        <td>Грубая, проволокообразная, густая шерсть</td>
+                        <td>Борода и кустистые брови, почти не линяет</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-heart"></i> Характер</h2>
+
+            <div style="text-align: center; margin: 25px 0;">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Игривая такса" style="width: 100%; max-width: 700px; border-radius: 12px;">
+                <p class="caption">Таксы обожают игры и внимание</p>
+            </div>
+
+            <h3>Положительные черты:</h3>
+            <div class="character-traits">
+                <div class="trait"><i class="fas fa-brain"></i> Умные и сообразительные</div>
+                <div class="trait"><i class="fas fa-home"></i> Преданные своей семье</div>
+                <div class="trait"><i class="fas fa-shield-alt"></i> Смелые и решительные</div>
+                <div class="trait"><i class="fas fa-battery-full"></i> Энергичные и игривые</div>
+            </div>
+
+            <h3>Что важно знать:</h3>
+            <div class="character-traits">
+                <div class="trait"><i class="fas fa-exclamation-triangle"></i> Могут быть упрямыми при дрессировке</div>
+                <div class="trait"><i class="fas fa-weight"></i> Нуждаются в контроле веса</div>
+                <div class="trait"><i class="fas fa-shovel"></i> Любят копать (наследие охотничьего прошлого)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-lightbulb"></i> Интересные факты</h2>
+
+            <div class="quote">
+                "Такса - это половина собаки в высоту, полторы собаки в длину и две собаки в темпераменте!"
+                <div class="quote-author">– Народная мудрость</div>
+            </div>
+
+            <ul class="facts-list">
+                <li><strong>Исторические корни</strong>: Порода возникла в Германии более 600 лет назад для охоты на барсуков</li>
+                <li><strong>Олимпийский талисман</strong>: Вальди — такса была официальным символом Олимпиады 1972 в Мюнхене</li>
+                <li><strong>Рекордсмены</strong>: Бадди, такса из США, пробежала марафон (42 км) за 7 дней</li>
+                <li><strong>В искусстве</strong>: Пабло Пикассо обожал свою таксу Лумпу и даже изобразил её на своих работах</li>
+                <li><strong>Королевские особы</strong>: Таксы были любимыми собаками королевы Виктории и императрицы Жозефины</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-images"></i> Галерея</h2>
+
+            <div class="gallery">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1597633425046-08f5110420b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Такса щенок">
+                    <p class="caption">Малыши-таксы невероятно милы</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1548192746-dd526f154cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Такса в свитере">
+                    <p class="caption">Модники в любую погоду</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1554342387-5c4e3c5b96ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Такса спит">
+                    <p class="caption">Мастера комфортного отдыха</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-paw"></i> Уход и содержание</h2>
+
+            <h3>Ежедневные потребности:</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4><i class="fas fa-walking"></i> Прогулки</h4>
+                    <p>2-3 раза в день, умеренная активность, избегать прыжков с высоты</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-utensils"></i> Питание</h4>
+                    <p>Сбалансированный рацион, контроль порций для поддержания здорового веса</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-bath"></i> Уход за шерстью</h4>
+                    <p>Зависит от типа шерсти: от еженедельного расчесывания до тримминга</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-heartbeat"></i> Здоровье</h4>
+                    <p>Регулярные визиты к ветеринару, особое внимание на позвоночник</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title"><i class="fas fa-exclamation-circle"></i> Важные предостережения</div>
+                <p>Из-за длинного позвоночника таксам нельзя:</p>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li>Прыгать с высоты (диваны, кровати, автомобили)</li>
+                    <li>Ходить по лестницам в щенячьем возрасте</li>
+                    <li>Набирать лишний вес (увеличивает нагрузку на позвоночник)</li>
+                    <li>Стоять на задних лапах или прыгать через барьеры</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-crown"></i> Почему таксы особенные?</h2>
+
+            <div class="quote">
+                "Счастье — это теплая такса на коленях в холодный вечер"
+            </div>
+
+            <p style="font-size: 1.2rem; margin: 20px 0;">Таксы — это не просто собаки, это <strong>личности</strong> с огромным сердцем в миниатюрном теле. Они сочетают в себе:</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4><i class="fas fa-gem"></i> Достоинство аристократа</h4>
+                    <p>Гордая осанка и чувство собственного достоинства</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-crosshairs"></i> Отвагу охотника</h4>
+                    <p>Бесстрашие и целеустремлённость в любом деле</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-hands-helping"></i> Нежность компаньона</h4>
+                    <p>Безграничная любовь и преданность семье</p>
+                </div>
+                <div class="feature-card">
+                    <h4><i class="fas fa-laugh"></i> Юмор клоуна</h4>
+                    <p>Способность развеселить и поднять настроение</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="font-size: 1.3rem; margin-bottom: 15px;">Страница создана с <span class="heart">❤️</span> к самой удивительной породе собак</p>
+            <div style="font-size: 2rem; margin: 15px 0;">
+                <i class="fas fa-dog" style="color: #ffd8b1;"></i>
+                <i class="fas fa-heart heart" style="margin: 0 15px;"></i>
+                <i class="fas fa-ruler-combined" style="color: #ffd8b1;"></i>
+                <i class="fas fa-hotdog" style="margin-left: 15px; color: #ffd8b1;"></i>
+            </div>
+            <p><em>Примечание: Все изображения взяты из Unsplash и используются в демонстрационных целях</em></p>
+            <p style="margin-top: 20px;">© 2023 Мир такс. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>
