@@ -1,6 +1,7 @@
 # 🐾 Таксы: Очарование в миниатюре
 
-![Такса в поле](https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+!<img width="282" height="179" alt="image" src="https://github.com/user-attachments/assets/9036bdb5-6e7c-4a5d-8d14-fd43aabb44b8" />
+
 *Фото: Unsplash*
 
 ## ✨ Особенности породы
